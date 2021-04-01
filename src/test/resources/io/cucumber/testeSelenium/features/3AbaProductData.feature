@@ -1,14 +1,10 @@
 # language: pt
-@ignore
 
 Funcionalidade: Acessar o site da Tricents e preencher o formulario
 Navegar no site da Tricents e simular o contrato de seguro de um veículo
 
-Contexto: Navegar no site da Tricents
-Dado que estou no site da tricents
-
 Cenario: Preencher o formulario da aba "Product Data"
-E estou na pagina enter product data
+E estou na pagina "Enter Product Data"
 E preencho o campo start date
 E preencho o campo insurance sum
 E preencho o campo merit rating

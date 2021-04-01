@@ -1,5 +1,9 @@
 package io.cucumber.testeSelenium.pages;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -8,55 +12,75 @@ import io.cucumber.testeSelenium.servicos.ConfigBrowser;
 
 public class InsurantDataPage extends ConfigBrowser {
 
-    public WebElement getInsurantDataElement() {
-        return browser.findElement(By.id("enterinsurantdata"));
-    }
-
     public WebElement getFirstNameElement() {
-        return browser.findElement(By.id("firstname"));
+        List<WebElement> firstname = browser.findElements(By.id("firstname"));
+        assertEquals(1, firstname.size());
+        return firstname.get(0);
     }
 
     public WebElement getLastNameElement() {
-        return browser.findElement(By.id("lastname"));
+        List<WebElement> lastname = browser.findElements(By.id("lastname"));
+        assertEquals(1, lastname.size());
+        return lastname.get(0);
     }
 
     public WebElement getDateOfBirthElement() {
-        return browser.findElement(By.id("birthdate"));
+        List<WebElement> birthdate = browser.findElements(By.id("birthdate"));
+        assertEquals(1, birthdate.size());
+        return birthdate.get(0);
     }
 
     public WebElement getGenderSelect() {
-        return browser.findElement(By.id("gendermale"));
+        List<WebElement> gendermale = browser.findElements(By.id("gendermale"));
+        assertEquals(1, gendermale.size());
+        return gendermale.get(0);
     }
 
     public WebElement getStreetAddressElement() {
-        return browser.findElement(By.id("streetaddress"));
+        List<WebElement> streetAddress = browser.findElements(By.id("streetaddress"));
+        assertEquals(1, streetAddress.size());
+        return streetAddress.get(0);
     }
 
     public Select getCountrySelect() {
-        return new Select(browser.findElement(By.id("country")));
+        List<WebElement> country = browser.findElements(By.id("country"));
+        assertEquals(1, country.size());
+        return new Select(country.get(0));
     }
 
     public WebElement getZipCodeElement() {
-        return browser.findElement(By.id("zipcode"));
+        List<WebElement> zipcode = browser.findElements(By.id("zipcode"));
+        assertEquals(1, zipcode.size());
+        return zipcode.get(0);
     }
 
     public WebElement getCityElement() {
-        return browser.findElement(By.id("city"));
+        List<WebElement> city = browser.findElements(By.id("city"));
+        assertEquals(1, city.size());
+        return city.get(0);
     }
 
     public Select getOccupationSelect() {
-        return new Select(browser.findElement(By.id("occupation")));
+        List<WebElement> occupation = browser.findElements(By.id("occupation"));
+        assertEquals(1, occupation.size());
+        return new Select(occupation.get(0));
     }
 
     public WebElement getHobbiesElement() {
-        return browser.findElement(By.id("speeding"));
+        List<WebElement> other = browser.findElements(By.id("other"));
+        assertEquals(1, other.size());
+        return other.get(0);
     }
 
     public WebElement getWebsiteElement() {
-        return browser.findElement(By.id("website"));
+        List<WebElement> website = browser.findElements(By.id("website"));
+        assertEquals(1, website.size());
+        return website.get(0);
     }
 
     public WebElement getNextElement() {
-        return browser.findElement(By.id("nextenterproductdata"));
+        List<WebElement> next = browser.findElements(By.id("nextenterproductdata"));
+        assertEquals(1, next.size());
+        return next.get(0);
     }
 }

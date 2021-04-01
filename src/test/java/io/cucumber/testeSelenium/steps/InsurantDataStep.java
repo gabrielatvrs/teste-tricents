@@ -1,22 +1,19 @@
 package io.cucumber.testeSelenium.steps;
 
-import static org.junit.Assert.assertTrue;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import io.cucumber.java.pt.*;
 import io.cucumber.testeSelenium.pages.InsurantDataPage;
 
 public class InsurantDataStep extends InsurantDataPage {
 
-    @Dado("estou na pagina enter insurant data")
-    public void estou_na_pagina_enter_insurant_data() {
-        assertTrue(getInsurantDataElement().getText().contains("Enter Insurant Data"));
-    }
-
     @Dado("preencho o campo name")
     public void preencho_o_campo_name() {
-        getFirstNameElement().sendKeys("Usuario");
+        WebElement campoNome = getFirstNameElement();
+        espera.until(ExpectedConditions.elementToBeClickable(campoNome));
+        campoNome.sendKeys("Usuario");
     }
 
     @Dado("preencho o campo last name")
@@ -33,7 +30,8 @@ public class InsurantDataStep extends InsurantDataPage {
 
     @Dado("preencho o campo gender")
     public void preencho_o_campo_gender() {
-        getGenderSelect().click();
+        WebElement opcaoMale = getGenderSelect();
+        acoes.moveToElement(opcaoMale).click().perform();
     }
 
     @Dado("preencho o campo street address")
@@ -63,7 +61,8 @@ public class InsurantDataStep extends InsurantDataPage {
 
     @Dado("preencho o campo hobbies")
     public void preencho_o_campo_hobbies() {
-        getHobbiesElement().click();
+        WebElement hobbiesCheckbox = getHobbiesElement();
+        acoes.moveToElement(hobbiesCheckbox).click().perform();
     }
 
     @Dado("preencho o campo website")

@@ -2,16 +2,11 @@ package io.cucumber.testeSelenium.steps;
 
 import io.cucumber.testeSelenium.pages.ProductDataPage;
 
-import static org.junit.Assert.assertTrue;
+import org.openqa.selenium.WebElement;
 
 import io.cucumber.java.pt.*;
 
 public class ProductDataStep extends ProductDataPage {
-
-    @Dado("estou na pagina enter product data")
-    public void estou_na_pagina_enter_product_data() {
-        assertTrue(getProductDataElement().getText().contains("Enter Product Data"));
-    }
 
     @Dado("preencho o campo start date")
     public void preencho_o_campo_start_date() {
@@ -35,7 +30,8 @@ public class ProductDataStep extends ProductDataPage {
 
     @Dado("preencho o campo optional products")
     public void preencho_o_campo_optional_products() {
-        getOptionalProductsElement().click();
+        WebElement optionalProducts = getOptionalProductsElement();
+        acoes.moveToElement(optionalProducts).click().perform();
     }
 
     @Dado("preencho o campo courtesy car")

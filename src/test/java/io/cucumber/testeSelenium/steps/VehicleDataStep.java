@@ -1,6 +1,5 @@
 package io.cucumber.testeSelenium.steps;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import io.cucumber.java.pt.*;
 import io.cucumber.testeSelenium.pages.VehicleDataPage;
 
@@ -10,11 +9,6 @@ public class VehicleDataStep extends VehicleDataPage {
     public void que_estou_no_site_da_tricents() {
         abrir("http://sampleapp.tricentis.com/101/app.php");
         browser.manage().window().maximize();
-    }
-
-    @Dado("estou na pagina enter vehicle data")
-    public void estou_na_pagina_enter_vehicle_data() {
-        assertTrue(getVehicleDataElement().getText().contains("Enter Vehicle Data"));
     }
 
     @Dado("preencho o campo make")

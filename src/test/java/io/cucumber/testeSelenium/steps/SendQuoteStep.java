@@ -1,16 +1,11 @@
 package io.cucumber.testeSelenium.steps;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 import io.cucumber.java.pt.*;
 import io.cucumber.testeSelenium.pages.SendQuotePage;
 
 public class SendQuoteStep extends SendQuotePage {
-
-    @Dada("estou na pagina send quote")
-    public void estou_na_pagina_send_quote() {
-        assertTrue(getSendQuoteElement().getText().contains("Send Quote"));
-    }
 
     @Dado("preencho o campo e-mail")
     public void preencho_o_campo_e_mail() {
@@ -24,17 +19,17 @@ public class SendQuoteStep extends SendQuotePage {
 
     @Dado("preencho o campo username")
     public void preencho_o_campo_username() {
-        getUsernameElement().sendKeys("Username");
+        getUsernameElement().sendKeys("username");
     }
 
     @Dado("preencho o campo password")
     public void preencho_o_campo_password() {
-        getPasswordElement().sendKeys("Senha");
+        getPasswordElement().sendKeys("A1b2c3");
     }
 
     @Dado("preencho o campo confirm password")
     public void preencho_o_campo_confirm_password() {
-        getConfirmPasswordElement().sendKeys("Senha");
+        getConfirmPasswordElement().sendKeys("A1b2c3");
     }
 
     @Entao("eu clico no botao send para enviar o formulario")
@@ -45,5 +40,6 @@ public class SendQuoteStep extends SendQuotePage {
     @Dado("verifico a mensagem {string}")
     public void verifico_a_mensagem(String string) {
         assertEquals(string, getSuccessMessageElement().getText());
+        fechar();
     }
 }

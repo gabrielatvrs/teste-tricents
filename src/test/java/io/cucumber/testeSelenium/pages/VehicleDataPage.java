@@ -1,5 +1,10 @@
 package io.cucumber.testeSelenium.pages;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,69 +14,94 @@ import io.cucumber.testeSelenium.servicos.ConfigBrowser;
 
 public class VehicleDataPage extends ConfigBrowser {
 
-    public WebElement getVehicleDataElement() {
-        return browser.findElement(By.id("entervehicledata"));
-    }
-
     public Select getMakeSelect() {
-        return new Select(browser.findElement(By.id("make")));
+        List<WebElement> make = browser.findElements(By.id("make"));
+        assertEquals(1, make.size());
+        return new Select(make.get(0));
     }
 
     public Select getModelSelect() {
-        return new Select(browser.findElement(By.id("model")));
+        List<WebElement> model = browser.findElements(By.id("model"));
+        assertEquals(1, model.size());
+        return new Select(model.get(0));
     }
 
     public WebElement getCylinderCapacityElement() {
-        return browser.findElement(By.id("cylindercapacity"));
+        List<WebElement> cylinderCapacity = browser.findElements(By.id("cylindercapacity"));
+        assertEquals(1, cylinderCapacity.size());
+        return cylinderCapacity.get(0);
     }
 
     public WebElement getEnginePerformanceElement() {
-        return browser.findElement(By.id("engineperformance"));
+        List<WebElement> enginePerformance = browser.findElements(By.id("engineperformance"));
+        assertEquals(1, enginePerformance.size());
+        return enginePerformance.get(0);
     }
 
     public WebElement getDateOfManufactureElement() {
-        return browser.findElement(By.id("dateofmanufacture"));
+        List<WebElement> dateOfManufacture = browser.findElements(By.id("dateofmanufacture"));
+        assertEquals(1, dateOfManufacture.size());
+        return dateOfManufacture.get(0);
     }
 
     public Select getSeatSelect() {
-        return new Select(browser.findElement(By.id("numberofseats")));
+        List<WebElement> numberOfSeats = browser.findElements(By.id("numberofseats"));
+        assertEquals(1, numberOfSeats.size());
+        return new Select(numberOfSeats.get(0));
     }
 
     public WebElement getHandDriveElement() {
-        WebElement handDrive = browser.findElement(By.cssSelector(".ideal-radiocheck-label"));
-        espera.until(ExpectedConditions.elementToBeClickable(handDrive));
-        return handDrive;
+        List<WebElement> handDrive = browser.findElements(By.cssSelector(".ideal-radiocheck-label"));
+        assertNotEquals(0, handDrive.size());
+        espera.until(ExpectedConditions.elementToBeClickable(handDrive.get(0)));
+        return handDrive.get(0);
     }
 
     public Select getSeatMotorcycleSelect() {
-        return new Select(browser.findElement(By.id("numberofseatsmotorcycle")));
+        List<WebElement> numberOfSeatsMotorcycle = browser.findElements(By.id("numberofseatsmotorcycle"));
+        assertEquals(1, numberOfSeatsMotorcycle.size());
+        return new Select(numberOfSeatsMotorcycle.get(0));
     }
 
     public Select getFuelSelect() {
-        return new Select(browser.findElement(By.id("fuel")));
+        List<WebElement> fuel = browser.findElements(By.id("fuel"));
+        assertEquals(1, fuel.size());
+        return new Select(fuel.get(0));
     }
 
     public WebElement getPayloadElement() {
-        return browser.findElement(By.id("payload"));
+        List<WebElement> payload = browser.findElements(By.id("payload"));
+        assertEquals(1, payload.size());
+        return payload.get(0);
     }
 
     public WebElement getTotalWeightElement() {
-        return browser.findElement(By.id("totalweight"));
+        List<WebElement> totalWeight = browser.findElements(By.id("totalweight"));
+        assertEquals(1, totalWeight.size());
+        return totalWeight.get(0);
     }
 
     public WebElement getListPriceElement() {
-        return browser.findElement(By.id("listprice"));
+        List<WebElement> listPrice = browser.findElements(By.id("listprice"));
+        assertEquals(1, listPrice.size());
+        return listPrice.get(0);
     }
 
     public WebElement getLicensePlateNumberElement() {
-        return browser.findElement(By.id("licenseplatenumber"));
+        List<WebElement> licensePlateNumber = browser.findElements(By.id("licenseplatenumber"));
+        assertEquals(1, licensePlateNumber.size());
+        return licensePlateNumber.get(0);
     }
 
     public WebElement getAnnualMileageElement() {
-        return browser.findElement(By.id("annualmileage"));
+        List<WebElement> annualMileage = browser.findElements(By.id("annualmileage"));
+        assertEquals(1, annualMileage.size());
+        return annualMileage.get(0);
     }
 
     public WebElement getNextElement() {
-        return browser.findElement(By.id("nextenterinsurantdata"));
+        List<WebElement> next = browser.findElements(By.id("nextenterinsurantdata"));
+        assertEquals(1, next.size());
+        return next.get(0);
     }
 }
