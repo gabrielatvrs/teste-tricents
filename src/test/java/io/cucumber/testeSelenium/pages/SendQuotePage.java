@@ -17,8 +17,8 @@ public class SendQuotePage extends ConfigBrowser {
 
     public WebElement getPhoneElement() {
         return browser.findElement(By.id("phone"));
-    }  
-    
+    }
+
     public WebElement getUsernameElement() {
         return browser.findElement(By.id("username"));
     }
@@ -31,11 +31,11 @@ public class SendQuotePage extends ConfigBrowser {
         return browser.findElement(By.id("confirmpassword"));
     }
 
-    public WebElement getCommentsElement() {
-        return browser.findElement(By.id("comments"));
+    public WebElement getSendElement() {
+        return browser.findElement(By.id("sendemail"));
     }
 
-    public WebElement getSendElement() {
-        return browser.findElement(By.id("send"));
+    public WebElement getSuccessMessageElement() {
+        return browser.findElement(By.cssSelector("div.sweet-alert > h2"));
     }
 }

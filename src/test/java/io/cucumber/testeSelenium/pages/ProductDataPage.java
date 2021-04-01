@@ -20,6 +20,10 @@ public class ProductDataPage extends ConfigBrowser {
         return new Select(browser.findElement(By.id("insurancesum")));
     }
 
+    public Select getMeritRatingSelect() {
+        return new Select(browser.findElement(By.id("meritrating")));
+    }
+
     public Select getDamageInsuranceSelect() {
         return new Select(browser.findElement(By.id("damageinsurance")));
     }

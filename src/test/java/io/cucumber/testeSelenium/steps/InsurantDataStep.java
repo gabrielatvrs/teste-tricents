@@ -33,10 +33,7 @@ public class InsurantDataStep extends InsurantDataPage {
 
     @Dado("preencho o campo gender")
     public void preencho_o_campo_gender() {
-       /*WebDriverWait espera = new WebDriverWait(browser, 5)
-        espera.until(ExpectedConditions.elementToBeClickable(gender)); */
-
-        ((WebElement) getGenderSelect()).click();
+        getGenderSelect().click();
     }
 
     @Dado("preencho o campo street address")
@@ -45,7 +42,7 @@ public class InsurantDataStep extends InsurantDataPage {
     }
 
     @Dado("preencho o campo country")
-    public void preencho_o_campo_country() {        
+    public void preencho_o_campo_country() {
         getCountrySelect().selectByIndex(31);
     }
 
@@ -55,7 +52,7 @@ public class InsurantDataStep extends InsurantDataPage {
     }
 
     @Dado("preencho o campo city")
-    public void preencho_o_campo_city() {        
+    public void preencho_o_campo_city() {
         getCityElement().sendKeys("São Paulo");
     }
 
@@ -73,11 +70,6 @@ public class InsurantDataStep extends InsurantDataPage {
     public void preencho_o_campo_website() {
         getWebsiteElement().sendKeys("http://www.capital.sp.gov.br");
     }
-
-    /*
-     * @Dado("preencho o campo picture") public void preencho_o_campo_picture() {
-     * WebElement open = browser.findElement(By.id("open")); open.click(); }
-     */
 
     @Entao("eu clico no botao next para ir para a aba Product Data")
     public void eu_clico_no_botao_next_para_ir_para_a_aba_product_data() {

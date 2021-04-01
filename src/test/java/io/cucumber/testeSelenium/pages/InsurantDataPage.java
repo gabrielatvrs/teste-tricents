@@ -2,7 +2,6 @@ package io.cucumber.testeSelenium.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import io.cucumber.testeSelenium.servicos.ConfigBrowser;
@@ -25,8 +24,8 @@ public class InsurantDataPage extends ConfigBrowser {
         return browser.findElement(By.id("birthdate"));
     }
 
-    public Select getGenderSelect() {
-        return new Select(browser.findElement(By.id(".ideal-radio")));
+    public WebElement getGenderSelect() {
+        return browser.findElement(By.id("gendermale"));
     }
 
     public WebElement getStreetAddressElement() {
@@ -50,9 +49,7 @@ public class InsurantDataPage extends ConfigBrowser {
     }
 
     public WebElement getHobbiesElement() {
-        WebElement hobbies = browser.findElement(By.cssSelector(".ideal-radiocheck-label"));
-        espera.until(ExpectedConditions.elementToBeClickable(hobbies));
-        return hobbies;  
+        return browser.findElement(By.id("speeding"));
     }
 
     public WebElement getWebsiteElement() {
@@ -61,5 +58,5 @@ public class InsurantDataPage extends ConfigBrowser {
 
     public WebElement getNextElement() {
         return browser.findElement(By.id("nextenterproductdata"));
-    }   
+    }
 }

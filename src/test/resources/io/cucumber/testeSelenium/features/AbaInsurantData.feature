@@ -20,5 +20,4 @@ E preencho o campo city
 E preencho o campo occupation
 E preencho o campo hobbies
 E preencho o campo website
-| -- E preencho o campo picture -- |
 Entao eu clico no botao next para ir para a aba Product Data

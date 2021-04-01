@@ -13,5 +13,5 @@ E preencho o campo phone
 E preencho o campo username
 E preencho o campo password
 E preencho o campo confirm password
-E preencho o campo comments
 Entao eu clico no botao send para enviar o formulario
+E verifico a mensagem "Sending e-mail success!"

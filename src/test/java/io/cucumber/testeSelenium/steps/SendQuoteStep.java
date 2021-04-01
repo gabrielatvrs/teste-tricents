@@ -1,5 +1,6 @@
 package io.cucumber.testeSelenium.steps;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import io.cucumber.java.pt.*;
 import io.cucumber.testeSelenium.pages.SendQuotePage;
@@ -32,17 +33,17 @@ public class SendQuoteStep extends SendQuotePage {
     }
 
     @Dado("preencho o campo confirm password")
-    public void preencho_o_campo_confirm_password() {       
+    public void preencho_o_campo_confirm_password() {
         getConfirmPasswordElement().sendKeys("Senha");
-    }
-
-    @Dado("preencho o campo comments")
-    public void preencho_o_campo_comments() {
-        getCommentsElement().sendKeys("Comentário");
     }
 
     @Entao("eu clico no botao send para enviar o formulario")
     public void eu_clico_no_botao_send_para_enviar_o_formulario() {
         getSendElement().click();
+    }
+
+    @Dado("verifico a mensagem {string}")
+    public void verifico_a_mensagem(String string) {
+        assertEquals(string, getSuccessMessageElement().getText());
     }
 }

@@ -4,9 +4,6 @@ import io.cucumber.testeSelenium.pages.ProductDataPage;
 
 import static org.junit.Assert.assertTrue;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
-
 import io.cucumber.java.pt.*;
 
 public class ProductDataStep extends ProductDataPage {
@@ -28,8 +25,7 @@ public class ProductDataStep extends ProductDataPage {
 
     @Dado("preencho o campo merit rating")
     public void preencho_o_campo_merit_rating() {
-        Select meritRatingSelect = new Select(browser.findElement(By.id("meritrating")));
-        meritRatingSelect.selectByIndex(9);
+        getMeritRatingSelect().selectByIndex(9);
     }
 
     @Dado("preencho o campo damage insurance")

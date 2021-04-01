@@ -23,8 +23,6 @@ public class ConfigBrowser {
 	public static void fechar() {
 		browser.close();
 		browser = null;
-	}
-
-	
+	}	
 }
 
